@@ -1,0 +1,20 @@
+{
+  "name": "ahha-susy",
+  "version": "0.0.0",
+  "authors": [
+    "Amy Dutton <amy@ahhacreative.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery.fitvids": "fitvids#^1.1.0",
+    "susy": "^2.2.12",
+    "normalize-scss": "^3.0.3"
+  }
+}

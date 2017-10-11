@@ -1,0 +1,25 @@
+/*------------------------------------*\
+    #GRID-SETTINGS
+\*------------------------------------*/
+
+$page-width: 1300px;
+
+@mixin restrainPage() {
+	margin: 0 auto;
+	max-width: $page-width;
+	position: relative;
+}
+
+@mixin grid($fullwidth: false) {
+	@if $fullwidth == false {
+		@include restrainPage;
+	}
+	display: grid;
+	grid-column-gap: 20px;
+	grid-row-gap: 0;
+	grid-template-columns: repeat(12, 1fr);
+}
+
+.grid {
+	@include grid;
+}
