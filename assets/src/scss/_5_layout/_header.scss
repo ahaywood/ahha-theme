@@ -2,7 +2,7 @@
     #HEADER
 \*------------------------------------*/
 
-header { 
+header {
 
 }
 
@@ -15,15 +15,16 @@ header {
 \*------------------------------------*/
 
 .nav {
-		
-	ul { 
-		@extend %no-bullets;
-		
-		> li { 
-			
-			> a { 
 
-				&:hover { 
+	ul {
+		@include no-bullets;
+
+		> li {
+
+			> a {
+
+				&:hover {
+
 				}
 			}
 		}
