@@ -1,6 +1,8 @@
 /*------------------------------------*\
     #MIXINS
 
+	- word wrap
+	- ellipsis
 	- remove-text
 	- no-bullets
 	- no-margin-padding
@@ -13,6 +15,36 @@
 
 \*------------------------------------*/
 
+/**
+ * WORD WRAP
+ * Reference: https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+ */
+@mixin word-wrap() {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+/**
+ * ELLIPSIS
+ * Reference: https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+ */
+@mixin ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+/**
+ * REMOVE TEXT
+ */
 @mixin remove-text() {
 	text-indent: -9999px;
 }
