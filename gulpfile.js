@@ -57,6 +57,13 @@ gulp.task('styles', function() {
 		.pipe(browserSync.stream());
 });
 
+gulp.task('admin', function() {
+	gulp.src('assets/src/scss/admin.scss')
+		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+		.pipe(sass())
+		.pipe(gulp.dest('assets/dist/css'));
+});
+
 // HANDLE JS
 gulp.task('scripts', function() {
   	gulp.src('assets/src/js/*')
@@ -107,7 +114,9 @@ gulp.task('clear', function (done) {
 
 // CLEAN UP
 gulp.task('clean', function() {
-	return del.sync('dist');
+	return del([
+    	'assets/dist/**/*',
+  	]);
 });
 
 
@@ -146,5 +155,5 @@ gulp.task('watch', ['serve', 'styles'], function() {
 
 
 gulp.task('default', function() {
-	gulp.start('sprites', 'styles', 'scripts', 'img', 'fonts', 'watch', 'clear', 'serve');
+	gulp.start('sprites', 'styles', 'admin', 'scripts', 'img', 'fonts', 'watch', 'clear', 'serve');
 });
