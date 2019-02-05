@@ -404,5 +404,8 @@ remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altoget
 
  }
 
-
-// TODO: INCLUDE AH HA CREATIVE BRANDED LOGIN SCREEN
+/*------------------------------------*\
+    Disable the Gutenberg Editor
+    https://kinsta.com/blog/disable-gutenberg-wordpress-editor/
+ \*------------------------------------*/
+add_filter('use_block_editor_for_post', '__return_false');
